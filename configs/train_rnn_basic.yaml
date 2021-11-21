@@ -1,0 +1,53 @@
+
+## Where the samples will be written
+save_data: /home/AK/skrjanec/text_simplification/vocabs
+## Where the vocab(s) will be written
+src_vocab: /home/AK/skrjanec/text_simplification/vocabs/shared_no_ct.txt
+# sh_set_vocab.src
+#tgt_vocab: /home/CE/skrjanec/chart_onmt/vocabs/sh_delex_vocab.tgt # if the vocab is shared, commeted out
+# Prevent overwriting existing files in the folder
+#overwrite: False
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: /home/AK/skrjanec/text_simplification/data/apa/source_target/source_none_train.txt
+        path_tgt: /home/AK/skrjanec/text_simplification/data/apa/source_target/target_train.txt
+    valid:
+        path_src: /home/AK/skrjanec/text_simplification/data/apa/source_target/source_none_val.txt
+        path_tgt: /home/AK/skrjanec/text_simplification/data/apa/source_target/target_val.txt
+
+share_vocab: True
+
+
+# Train on a single GPU
+world_size: 1
+gpu_ranks: [0]
+seed: 1234
+
+# model setup
+encoder_type: brnn
+decoder_type: rnn
+src_word_vec_size: 512
+tgt_word_vec_size: 768
+enc_layers: 2
+dec_layers: 2
+enc_rnn_size: 1024
+dec_rnn_size: 1024
+rnn_type: LSTM
+# global_attention (dot, general, mlp)
+global_attention: general
+copy_attn: True
+
+# optimization
+optim: adam
+learning_rate: 0.001
+dropout: 0.3
+batch_size: 64
+
+
+# Where to save the checkpoints
+save_model:  /home/AK/skrjanec/text_simplification/models/none_rnn
+save_checkpoint_steps: 5
+train_steps: 280
+valid_steps: 5

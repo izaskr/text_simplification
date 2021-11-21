@@ -1,0 +1,17 @@
+# a config for inference: https://opennmt.net/OpenNMT-py/options/translate.html
+
+# path to model
+model: /home/AK/skrjanec/text_simplification/models_step_280.pt
+
+# path to the test set (one sequence per line)
+src: /home/AK/skrjanec/text_simplification/data/apa/source_target/source_none_test.txt
+
+# path to the output file - predictions
+output: /home/AK/skrjanec/text_simplification/pred/none_rnn_basic.txt
+
+# decoding options
+beam_size: 4
+
+block_ngram_repeat: 2
+
+gpu: 0
