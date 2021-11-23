@@ -32,8 +32,8 @@ src_word_vec_size: 512
 tgt_word_vec_size: 512
 enc_layers: 2
 dec_layers: 2
-enc_rnn_size: 1024
-dec_rnn_size: 1024
+enc_rnn_size: 512
+dec_rnn_size: 512
 rnn_type: LSTM
 # global_attention (dot, general, mlp)
 global_attention: general
@@ -41,13 +41,13 @@ copy_attn: True
 
 # optimization
 optim: adam
-learning_rate: 0.0004 # default: 0.001, larger LRs worsen the performance
+learning_rate: 0.001
 dropout: 0.3
 batch_size: 64
 
 
 # Where to save the checkpoints
-save_model:  /home/AK/skrjanec/text_simplification/models/none_rnn
+save_model:  /home/AK/skrjanec/text_simplification/models/none_rnn02
 save_checkpoint_steps: 5
-train_steps: 450
+train_steps: 350
 valid_steps: 5

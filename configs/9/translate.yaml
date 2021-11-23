@@ -1,13 +1,13 @@
 # a config for inference: https://opennmt.net/OpenNMT-py/options/translate.html
 
 # path to model
-model: /home/AK/skrjanec/text_simplification/models/none_rnn_step_450.pt
+model: /home/AK/skrjanec/text_simplification/models/9/rnn_basic_step_450.pt
 
 # path to the test set (one sequence per line)
-src: /home/AK/skrjanec/text_simplification/data/apa/source_target/source_none_test.txt
+src: /home/AK/skrjanec/text_simplification/data/apa/source_target/source_test_char_bin_tok_bin.txt
 
 # path to the output file - predictions
-output: /home/AK/skrjanec/text_simplification/pred/rnn_lr-even-smaller.txt
+output: /home/AK/skrjanec/text_simplification/pred/9/rnn_basic.txt
 
 # decoding options
 beam_size: 4

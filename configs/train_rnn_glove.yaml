@@ -28,8 +28,8 @@ seed: 1234
 # model setup
 encoder_type: brnn
 decoder_type: rnn
-src_word_vec_size: 512
-tgt_word_vec_size: 512
+src_word_vec_size: 300
+tgt_word_vec_size: 300
 enc_layers: 2
 dec_layers: 2
 enc_rnn_size: 1024
@@ -39,15 +39,21 @@ rnn_type: LSTM
 global_attention: general
 copy_attn: True
 
+# use pretrained word embeddings and finetune or freeze them
+embeddings_type: "GloVe"
+both_embeddings: /home/AK/skrjanec/text_simplification/glove/german_glove_vectors_300d.txt
+freeze_word_vecs_enc: True
+freeze_word_vecs_dec: True
+
 # optimization
 optim: adam
-learning_rate: 0.0004 # default: 0.001, larger LRs worsen the performance
+learning_rate: 0.0007 # default: 0.001, tried 0.05
 dropout: 0.3
 batch_size: 64
 
 
 # Where to save the checkpoints
-save_model:  /home/AK/skrjanec/text_simplification/models/none_rnn
+save_model:  /home/AK/skrjanec/text_simplification/models/none_glove_rnn_freeze
 save_checkpoint_steps: 5
-train_steps: 450
+train_steps: 500
 valid_steps: 5

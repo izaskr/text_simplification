@@ -1,0 +1,3 @@
+# using EASSE
+easse evaluate -m "bleu,sari" -t custom --refs_sents_paths data/apa/source_target/target_test.txt --orig_sents_path data/apa/source_target/source_none_test.txt --sys_sents_path pred/none_glove_rnn_lr-sm.txt -tok none 
+

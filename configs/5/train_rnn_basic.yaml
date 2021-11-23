@@ -2,7 +2,7 @@
 ## Where the samples will be written
 save_data: /home/AK/skrjanec/text_simplification/vocabs
 ## Where the vocab(s) will be written
-src_vocab: /home/AK/skrjanec/text_simplification/vocabs/shared_no_ct.txt
+src_vocab: /home/AK/skrjanec/text_simplification/vocabs/shared_all_ct.txt
 # sh_set_vocab.src
 #tgt_vocab: /home/CE/skrjanec/chart_onmt/vocabs/sh_delex_vocab.tgt # if the vocab is shared, commeted out
 # Prevent overwriting existing files in the folder
@@ -11,10 +11,10 @@ src_vocab: /home/AK/skrjanec/text_simplification/vocabs/shared_no_ct.txt
 # Corpus opts:
 data:
     corpus_1:
-        path_src: /home/AK/skrjanec/text_simplification/data/apa/source_target/source_none_train.txt
+        path_src: /home/AK/skrjanec/text_simplification/data/apa/source_target/source_train_char_bin_tok_bin_lev_bin.txt 
         path_tgt: /home/AK/skrjanec/text_simplification/data/apa/source_target/target_train.txt
     valid:
-        path_src: /home/AK/skrjanec/text_simplification/data/apa/source_target/source_none_val.txt
+        path_src: /home/AK/skrjanec/text_simplification/data/apa/source_target/source_val_char_bin_tok_bin_lev_bin.txt
         path_tgt: /home/AK/skrjanec/text_simplification/data/apa/source_target/target_val.txt
 
 share_vocab: True
@@ -41,13 +41,13 @@ copy_attn: True
 
 # optimization
 optim: adam
-learning_rate: 0.0004 # default: 0.001, larger LRs worsen the performance
+learning_rate: 0.0007 # default: 0.001, larger LRs worsen the performance
 dropout: 0.3
 batch_size: 64
 
 
 # Where to save the checkpoints
-save_model:  /home/AK/skrjanec/text_simplification/models/none_rnn
+save_model:  /home/AK/skrjanec/text_simplification/models/5/rnn_basic
 save_checkpoint_steps: 5
 train_steps: 450
 valid_steps: 5
