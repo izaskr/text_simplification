@@ -11,11 +11,11 @@ src_vocab: /home/AK/skrjanec/text_simplification/vocabs/shared_all_ct.txt
 # Corpus opts:
 data:
     corpus_1:
-        path_src: /home/AK/skrjanec/text_simplification/data/apa/source_target/source_train_char_bin_lev_bin.txt
-        path_tgt: /home/AK/skrjanec/text_simplification/data/apa/source_target/target_train.txt
+        path_src: /home/AK/skrjanec/text_simplification/data/apa/source_target_copy/source_train_char_bin_lev_bin.txt
+        path_tgt: /home/AK/skrjanec/text_simplification/data/apa/source_target_copy/target_train.txt
     valid:
-        path_src: /home/AK/skrjanec/text_simplification/data/apa/source_target/source_val_char_bin_lev_bin.txt
-        path_tgt: /home/AK/skrjanec/text_simplification/data/apa/source_target/target_val.txt
+        path_src: /home/AK/skrjanec/text_simplification/data/apa/source_target_copy/source_val_char_bin_lev_bin.txt
+        path_tgt: /home/AK/skrjanec/text_simplification/data/apa/source_target_copy/target_val.txt
 
 share_vocab: True
 
@@ -47,7 +47,7 @@ batch_size: 64
 
 
 # Where to save the checkpoints
-save_model:  /home/AK/skrjanec/text_simplification/models/10/rnn_basic
+save_model:  /home/AK/skrjanec/text_simplification/models/10/rnn_basic_copy
 save_checkpoint_steps: 5
 train_steps: 450
 valid_steps: 5
